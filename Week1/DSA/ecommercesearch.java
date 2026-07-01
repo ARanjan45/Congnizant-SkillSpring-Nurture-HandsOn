@@ -1,5 +1,13 @@
 import java.util.Arrays;
 import java.util.Comparator;
+
+/*
+ * Big O Notation:
+ *  - Describes how runtime grows relative to input size n.
+ *  - Linear Search: Best O(1), Average/Worst O(n)
+ *  - Binary Search: Best O(1), Average/Worst O(log n) — requires sorted data
+ */
+
 class Product {
     int productId;
     String productName;
@@ -67,5 +75,14 @@ public class Exercise2_EcommerceSearch {
         result = binarySearch(sorted, 999);
         System.out.println("Search ID 999: " + (result != null ? result : "Not found"));
 
+        /*
+         * ANALYSIS:
+         * Linear Search: O(n) - scans every element. Simple, works on unsorted data.
+         * Binary Search: O(log n) - halves search space each step. Needs sorted data.
+         *
+         * For an e-commerce platform with millions of products:
+         * → Binary Search (or indexing via HashMap/DB index) is far more suitable.
+         * → If data changes frequently, maintain sorted order or use a TreeMap.
+         */
     }
 }
